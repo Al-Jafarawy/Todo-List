@@ -29,3 +29,9 @@
 .scroll-container::-webkit-scrollbar {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .todoCard {
+    padding-left: 65px;
+  }
+}
