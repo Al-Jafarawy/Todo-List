@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+.iconButton {
+  transition: all 0.2s !important;
+}
+
+.iconButton:hover {
+  background-color: #c5c5c5 !important;
+  box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.4);
+}
+
+.todoCard {
+  transition: all 0.2s !important;
+  padding: 16px;
+}
+
+.todoCard:hover {
+  box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-container {
+  height: 60vh;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
