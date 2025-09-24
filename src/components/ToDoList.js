@@ -9,7 +9,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-import Task from "./Todo";
+import TaskUi from "./TodoUI";
 import { useContext, useEffect, useState, useMemo } from "react";
 import DialogContentText from "@mui/material/DialogContentText";
 
@@ -112,7 +112,7 @@ export default function TodoList() {
 
   const todosJsx = renderTasks.map((element) => {
     return (
-      <Task
+      <TaskUi
         key={element.id}
         task={element}
         openAlertFun={openAlertFun}

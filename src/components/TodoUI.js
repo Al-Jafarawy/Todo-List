@@ -11,7 +11,7 @@ import { useContext } from "react";
 import { useReduce } from "../Context/toDoContext";
 import { ToastContext } from "../Context/ToastContext";
 
-export default function Task({ task, openAlertFun, openUpdatAlert }) {
+export default function TaskUi({ task, openAlertFun, openUpdatAlert }) {
   const {  dispatch } = useReduce();
   const { showHideToast } = useContext(ToastContext);
 
