@@ -2,17 +2,12 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
 
-export default function TosatBarFun({ open, content, onClose }) {
+export default function TosatBarFun({ open, content }) {
   return (
     <div>
       <Stack sx={{ width: "100%" }} spacing={2}>
-        <Snackbar open={open} autoHideDuration={1000} onClose={onClose}>
-          <Alert
-            onClose={onClose}
-            severity="success"
-            variant="filled"
-            sx={{ width: "100%" }}
-          >
+        <Snackbar open={open} autoHideDuration={1000}>
+          <Alert severity="success" variant="filled" sx={{ width: "100%" }}>
             {content}
           </Alert>
         </Snackbar>
