@@ -1,4 +1,4 @@
-import { createContext , useState } from "react";
+import { createContext, useState } from "react";
 import TosatBarFun from "../components/TosatBarFun";
 
 export const ToastContext = createContext();
@@ -17,7 +17,6 @@ export const ToastProvider = ({ children }) => {
 
   return (
     <>
-      
       <TosatBarFun open={open} content={content} />
       <ToastContext.Provider value={{ showHideToast }}>
         {children}

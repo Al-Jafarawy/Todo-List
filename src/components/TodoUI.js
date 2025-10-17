@@ -12,7 +12,7 @@ import { useReduce } from "../Context/toDoContext";
 import { ToastContext } from "../Context/ToastContext";
 
 export default function TaskUi({ task, openAlertFun, openUpdatAlert }) {
-  const {  dispatch } = useReduce();
+  const { dispatch } = useReduce();
   const { showHideToast } = useContext(ToastContext);
 
   function handelCheck() {
