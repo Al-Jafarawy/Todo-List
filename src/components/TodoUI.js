@@ -18,24 +18,28 @@ export default function TaskUi({ task, openAlertFun, openUpdatAlert }) {
   function handelCheck() {
     dispatch({ type: "checked", payload: { task } });
   }
+
   return (
     <Card
       className="todoCard"
       sx={{
         minWidth: 275,
-        background: "#dadadaff",
-        color: "white",
         marginTop: 3,
+        background: task.isCompleted ? "#e8f5e9" : "#f5f5f5",
+        borderRadius: "14px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
       }}
     >
-      <CardContent>
-        <Grid container spacing={2}>
+      <CardContent sx={{ padding: 2 }}>
+        <Grid container spacing={2} alignItems="center">
           <Grid size={8}>
             <Typography
               variant="h5"
               sx={{
                 textAlign: "right",
-                color: "black",
+                color: "#222",
+                fontWeight: "bold",
+                lineHeight: 1.4,
                 textDecoration: task.isCompleted ? "line-through" : "none",
               }}
             >
@@ -46,7 +50,8 @@ export default function TaskUi({ task, openAlertFun, openUpdatAlert }) {
               variant="h6"
               sx={{
                 textAlign: "right",
-                color: "gray",
+                color: "#666",
+                lineHeight: 1.4,
                 textDecoration: task.isCompleted ? "line-through" : "none",
               }}
             >
@@ -65,14 +70,19 @@ export default function TaskUi({ task, openAlertFun, openUpdatAlert }) {
             <IconButton
               onClick={() => {
                 handelCheck();
-                showHideToast(` Item Checked Successfully  `);
+                showHideToast("Item Checked Successfully");
               }}
               className="iconButton"
-              aria-label="delete"
-              style={{
+              sx={{
+                width: 45,
+                height: 45,
+                borderRadius: "50%",
                 color: task.isCompleted ? "white" : "#8bc34a",
-                background: task.isCompleted ? "#8bc34a" : "white",
-                border: "solid #8bc34a 3px",
+                backgroundColor: task.isCompleted ? "#8bc34a" : "white",
+                border: "3px solid #8bc34a",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                },
               }}
             >
               <CheckIcon />
@@ -80,30 +90,37 @@ export default function TaskUi({ task, openAlertFun, openUpdatAlert }) {
 
             {/* update btn */}
             <IconButton
-              onClick={() => {
-                openUpdatAlert(task);
-              }}
+              onClick={() => openUpdatAlert(task)}
               className="iconButton"
-              aria-label="delete"
-              style={{
+              sx={{
+                width: 45,
+                height: 45,
+                borderRadius: "50%",
                 color: "#1769aa",
-                background: "white",
-                border: "solid #1769aa 3px",
+                backgroundColor: "white",
+                border: "3px solid #1769aa",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                },
               }}
             >
               <ModeEditOutlineOutlinedIcon />
             </IconButton>
-            {/* deltete btn */}
+
+            {/* delete btn */}
             <IconButton
-              onClick={() => {
-                openAlertFun(task);
-              }}
+              onClick={() => openAlertFun(task)}
               className="iconButton"
-              aria-label="delete"
-              style={{
+              sx={{
+                width: 45,
+                height: 45,
+                borderRadius: "50%",
                 color: "#b23c17",
-                background: "white",
-                border: "solid #b23c17 3px",
+                backgroundColor: "white",
+                border: "3px solid #b23c17",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                },
               }}
             >
               <DeleteOutlineOutlinedIcon />
